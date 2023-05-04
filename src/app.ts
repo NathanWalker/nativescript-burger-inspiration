@@ -5,12 +5,13 @@ import StackSlideTransformation from "~/Transformer";
 import {createPinia} from 'pinia'
 import {BottomSheetPlugin} from '@nativescript-community/ui-material-bottomsheet/vue3';
 import {install} from "@nativescript-community/ui-material-bottomsheet";
+import { SharedTransition } from '@nativescript/core';
 
 registerElement("LottieView", () => require("@nativescript-community/ui-lottie").LottieView);
 registerElement("Pager", () => require("@nativescript-community/ui-pager").Pager);
 registerElement("PagerItem", () => require("@nativescript-community/ui-pager").PagerItem);
 
-
+SharedTransition.DEBUG = true;
 Pager.registerTransformer('stack', StackSlideTransformation)
 install();
 
